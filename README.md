@@ -87,7 +87,7 @@ SERVICE_ACCOUNT_CLIENT_EMAIL: {{ client_email from the service account key JSON 
 
 6. An OAuth 2.0 authorization dialog will appear to give this web app authorization to execute its code using your Google account's authorization. Login to your Google Account to allow the access. You might need to click `Advanced` to show the option to proceed.
 
-7. Alow this web app to execute its code using your Google account's authorization.
+7. Allow this web app to execute its code using your Google account's authorization.
 
 Note: although the script itself is being executed using your account's authorization (i.e. the code has the same access as your Google account), the actual authorization that's being passed to the Google APIs is the service account's authorization.
 
