@@ -1,18 +1,17 @@
-const PROPERTY_STORE = PropertiesService.getScriptProperties();
-// PropertiesService screws up newline characters, use the regex to fix it. Ref: https://github.com/googleworkspace/apps-script-oauth2/issues/122#issuecomment-507436277
-const PRIVATE_KEY = PROPERTY_STORE.getProperty('SERVICE_ACCOUNT_PRIVATE_KEY').replace(/\\n/g, '\n');
-const CLIENT_EMAIL = PROPERTY_STORE.getProperty('SERVICE_ACCOUNT_CLIENT_EMAIL');
-const SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly', 'https://www.googleapis.com/auth/documents.readonly'];
-
 function getApiService() {
+  const propertyStore = PropertiesService.getScriptProperties();
+  // PropertiesService screws up newline characters, use the regex to fix it. Ref: https://github.com/googleworkspace/apps-script-oauth2/issues/122#issuecomment-507436277
+  const privateKey = propertyStore.getProperty('SERVICE_ACCOUNT_PRIVATE_KEY').replace(/\\n/g, '\n');
+  const clientEmail = propertyStore.getProperty('SERVICE_ACCOUNT_CLIENT_EMAIL');
+
   return OAuth2.createService('api')
     .setTokenUrl('https://oauth2.googleapis.com/token')
-    .setPrivateKey(PRIVATE_KEY)
-    .setIssuer(CLIENT_EMAIL)
-    .setPropertyStore(PROPERTY_STORE)
+    .setPrivateKey(privateKey)
+    .setIssuer(clientEmail)
+    .setPropertyStore(propertyStore)
     .setCache(CacheService.getScriptCache())
     .setLock(LockService.getScriptLock())
-    .setScope(SCOPES);
+    .setScope(['https://www.googleapis.com/auth/spreadsheets.readonly', 'https://www.googleapis.com/auth/documents.readonly']);
 }
 
 function doGet(e: GoogleAppsScript.Events.DoGet): GoogleAppsScript.Content.TextOutput {
