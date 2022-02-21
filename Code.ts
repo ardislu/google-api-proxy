@@ -10,6 +10,8 @@ function getApiService() {
     .setPrivateKey(PRIVATE_KEY)
     .setIssuer(CLIENT_EMAIL)
     .setPropertyStore(PROPERTY_STORE)
+    .setCache(CacheService.getScriptCache())
+    .setLock(LockService.getScriptLock())
     .setScope(SCOPES);
 }
 
