@@ -1,6 +1,6 @@
 {
   "name": "google-api-proxy",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Google Apps Script proxy server to bypass Google API limitations.",
   "author": "Ardis Lu",
   "license": "ISC",
