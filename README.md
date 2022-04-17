@@ -125,4 +125,4 @@ https://script.google.com/macros/s/{scriptId}/exec?https://docs.googleapis.com/v
 
 ## Set OAuth permission scopes
 
-The project currently has OAuth permission scopes set for read-only Google Sheets and Google Docs access. Modify the `SCOPES` constant in `Code.ts` to add scopes for other Google APIs.
+The project currently has OAuth permission scopes set for read-only Google Sheets and Google Docs access. Modify the `.setScope` function in `Code.ts` to add scopes for other Google APIs.
