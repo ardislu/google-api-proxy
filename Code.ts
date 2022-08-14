@@ -1,8 +1,8 @@
 function getApiService() {
   const propertyStore = PropertiesService.getScriptProperties();
   // PropertiesService screws up newline characters, use the regex to fix it. Ref: https://github.com/googleworkspace/apps-script-oauth2/issues/122#issuecomment-507436277
-  const privateKey = propertyStore.getProperty('SERVICE_ACCOUNT_PRIVATE_KEY').replace(/\\n/g, '\n');
-  const clientEmail = propertyStore.getProperty('SERVICE_ACCOUNT_CLIENT_EMAIL');
+  const privateKey = (propertyStore.getProperty('SERVICE_ACCOUNT_PRIVATE_KEY') ?? '').replace(/\\n/g, '\n');
+  const clientEmail = propertyStore.getProperty('SERVICE_ACCOUNT_CLIENT_EMAIL') ?? '';
 
   return OAuth2.createService('api')
     .setTokenUrl('https://oauth2.googleapis.com/token')
