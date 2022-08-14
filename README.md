@@ -79,21 +79,19 @@ When prompted, overwrite the manifest file (`appsscript.json`).
 clasp open
 ```
 
-2. Go to `File > Project properties > Script properties`. Note: if you can't find this button, switch to the legacy editor.
-
-3. Create the following script properties:
+2. In the GAS editor, create the following [Google Apps Script properties](https://developers.google.com/apps-script/guides/properties) (environment variables) under `Project Settings > Script Properties`:
 ```
 SERVICE_ACCOUNT_PRIVATE_KEY: {{ private_key from the service account key JSON file }}
 SERVICE_ACCOUNT_CLIENT_EMAIL: {{ client_email from the service account key JSON file }}
 ```
 
-4. Press the `Run` button on the `doGet` function to execute the script for the first time. Note: this will return an error because no parameter is passed; this is expected.
+3. Press the `Run` button on the `doGet` function to execute the script for the first time. Note: this will return an error because no parameter is passed; this is expected.
 
-5. On first execution, Google will ask you to review the permissions for this web app. Click `Review permissions`. 
+4. On first execution, Google will ask you to review the permissions for this web app. Click `Review permissions`. 
 
-6. An OAuth 2.0 authorization dialog will appear to give this web app authorization to execute its code using your Google account's authorization. Login to your Google Account to allow the access. You might need to click `Advanced` to show the option to proceed.
+5. An OAuth 2.0 authorization dialog will appear to give this web app authorization to execute its code using your Google account's authorization. Login to your Google Account to allow the access. You might need to click `Advanced` to show the option to proceed.
 
-7. Allow this web app to execute its code using your Google account's authorization.
+6. Allow this web app to execute its code using your Google account's authorization.
 
 Note: although the script itself is being executed using your account's authorization (i.e. the code has the same access as your Google account), the actual authorization that's being passed to the Google APIs is the service account's authorization.
 
