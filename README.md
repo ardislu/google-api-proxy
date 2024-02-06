@@ -2,11 +2,8 @@
 
 [![clasp](https://img.shields.io/badge/built%20with-clasp-4285f4.svg)](https://github.com/google/clasp)
 
------
-
-**Update March 2022**: Google Apps Script web apps which use libraries can have cold start times that last several seconds ([reference](https://developers.google.com/apps-script/guides/libraries)). For this reason, it's not a good idea to use this code for production websites. For production use, you should re-implement the `OAuth2` library's logic using native [GAS APIs](https://developers.google.com/apps-script/reference/utilities/utilities), or use a different service.
-
------
+> [!IMPORTANT]<br>
+> **Update March 2022**: Google Apps Script web apps which use libraries can have cold start times that last several seconds ([reference](https://developers.google.com/apps-script/guides/libraries)). For this reason, it's not a good idea to use this code for production websites. For production use, you should re-implement the `OAuth2` library's logic using native [GAS APIs](https://developers.google.com/apps-script/reference/utilities/utilities), or use a different service.
 
 It's not possible to anonymously query Google APIs, even if the underlying document (e.g. a Google Doc) is publicly available through the normal frontend. This Google Apps Script (GAS) project is a proxy server to allow anonymous access to Google APIs.
 
