@@ -48,24 +48,19 @@ git clone https://github.com/ardislu/google-api-proxy.git
 npm i
 ```
 
-3. Install `clasp` globally (see [clasp documentation](https://developers.google.com/apps-script/guides/clasp)).
+3. Authorize `clasp` (see [clasp documentation](https://developers.google.com/apps-script/guides/clasp) for more information).
 ```
-npm i -g @google/clasp
-```
-
-4. Authorize yourself.
-```
-clasp login
+npm run clasp login
 ```
 
-5. Create a new GAS project.
+4. Create a new GAS project.
 ```
-clasp create --title "google-api-proxy" --type webapp
+npm run clasp create --title "google-api-proxy" --type webapp
 ```
 
-6. Push `Code.ts` and `appsscript.json` to the GAS project.
+5. Push `Code.ts` and `appsscript.json` to the GAS project.
 ```
-clasp push
+npm run clasp push
 ```
 When prompted, overwrite the manifest file (`appsscript.json`).
 ```
@@ -76,7 +71,7 @@ When prompted, overwrite the manifest file (`appsscript.json`).
 
 1. Open the GAS project.
 ```
-clasp open
+npm run clasp open
 ```
 
 2. In the GAS editor, create the following [Google Apps Script properties](https://developers.google.com/apps-script/guides/properties) (environment variables) under `Project Settings > Script Properties`:
@@ -99,7 +94,7 @@ Note: although the script itself is being executed using your account's authoriz
 
 This will publish the web app and allow anyone to query documents anonymously using the service account's authorization.
 ```
-clasp deploy
+npm run clasp deploy
 ```
 
 ## Usage

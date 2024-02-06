@@ -4,6 +4,9 @@
   "description": "Google Apps Script proxy server to bypass Google API limitations.",
   "author": "Ardis Lu",
   "license": "ISC",
+  "scripts": {
+    "clasp": "clasp"
+  },
   "devDependencies": {
     "@google/clasp": "^2.4.2",
     "@types/google-apps-script": "^1.0.79",
