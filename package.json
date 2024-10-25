@@ -9,9 +9,9 @@
   },
   "devDependencies": {
     "@google/clasp": "^2.4.2",
-    "@types/google-apps-script": "^1.0.79",
+    "@types/google-apps-script": "^1.0.84",
     "@types/google-apps-script-oauth2": "^38.0.4",
-    "typescript": "^5.3.3"
+    "typescript": "^5.6.3"
   },
   "repository": {
     "type": "git",
